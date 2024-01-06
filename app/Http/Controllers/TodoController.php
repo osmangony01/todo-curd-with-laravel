@@ -31,5 +31,25 @@ class TodoController extends Controller
             return redirect()->back()->with('success','Inserted successfully');
         }
     }
+
+    public function edit($id){
+        $todo = Todo::find($id);
+        return view("todo.edit", ['todo' => $todo]);
+    }
+
+    public function update(Request $req, $id){
+        $title = $req->title;
+        $date = $req->date;
+        $description = $req->description;
+
+        $todo = Todo::find($id);
+        $todo->title = $title;
+        $todo->date = $date;
+        $todo->description = $description;
+
+        if($todo->save()){
+            return redirect()->back()->with('success','Updated successfully');
+        }
+    }
    
 }

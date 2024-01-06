@@ -43,7 +43,7 @@
                             <td>{{ $todo->date }}</td>
                             <td>{{ $todo->description }}</td>
                             <td>
-                                <a href="#" class="btn btn-outline-success">Edit</a>
+                                <a href="{{URL::to('edit-todo/'.$todo->id)}}" class="btn btn-outline-success">Edit</a>
                                 <a href="#" class="btn btn-outline-danger">Delete</a>
                             </td>
                         </tr>
