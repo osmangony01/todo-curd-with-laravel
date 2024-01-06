@@ -1,0 +1,18 @@
+.todo-container{
+    width: 1000px;
+    margin: auto;
+    padding:0 15px 15px;
+    border: 1px solid #b3b1b1;
+    border-radius: 4px;
+    margin-top:10px;
+}
+
+.todo-heading{
+    padding: 10px 0;
+    font-size: 30px;
+}
+
+.add-form{
+    width: 70%;
+    margin: auto;
+}
