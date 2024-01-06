@@ -45,6 +45,7 @@
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary">Save Todo</button>
+                    <a type="button" href="{{URL::to('todos')}}" class="btn btn-outline-secondary">Back</a>
                 </div>
             </form>
         </div>

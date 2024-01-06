@@ -13,9 +13,11 @@ Route::get('/', function () {
 // });
 
 Route::get('/todos', [TodoController::class, 'allTodo']);
+
 Route::get('/add-todo', [TodoController::class, 'addTodo']);
 Route::post('/store-todo',[TodoController::class, 'store']);
 
 Route::get('/edit-todo/{id}',[TodoController::class, 'edit']);
 Route::post('/update-todo/{id}',[TodoController::class, 'update']);
 
+Route::get('/delete-todo/{id}', [TodoController::class, 'delete']);
