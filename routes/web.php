@@ -14,4 +14,4 @@ Route::get('/', function () {
 
 Route::get('/todos', [TodoController::class, 'allTodo']);
 Route::get('/add-todo', [TodoController::class, 'addTodo']);
-
+Route::post('/store-todo',[TodoController::class, 'store']);

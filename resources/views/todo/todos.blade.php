@@ -21,11 +21,36 @@
     <div class="todo-container">
         <h2 class='todo-heading' style="text-align:center">Welcome to Todo</h2>
         <div class="d-flex justify-content-end">
-            <button class="btn btn-primary"> + Add Todo</button>
+            <a href="{{ URL::to('add-todo') }}" class="btn btn-primary"> + Add Todo</a>
         </div>
 
         <div class="">
-            
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($todos as $todo)
+                        <tr>
+                            <th scope="row">{{ $loop->iteration }}</th>
+                            <td>{{ $todo->title }}</td>
+                            <td>{{ $todo->date }}</td>
+                            <td>{{ $todo->description }}</td>
+                            <td>
+                                <a href="#" class="btn btn-outline-success">Edit</a>
+                                <a href="#" class="btn btn-outline-danger">Delete</a>
+                            </td>
+                        </tr>
+                    @endforeach
+
+                </tbody>
+            </table>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
