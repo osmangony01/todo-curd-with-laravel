@@ -17,7 +17,15 @@ class TodoController extends Controller
         return view("todo.add");
     }
 
-    public function store(Request $req){
+    public function store(Request $req)
+    {
+        $validateData = $req->validate([
+            'title' => 'required|string|max:255',
+            'date' => 'required|date',
+            'description' => 'required'
+        ]);
+
+        
         $title = $req->title;
         $date = $req->date;
         $description = $req->description;
@@ -38,6 +46,13 @@ class TodoController extends Controller
     }
 
     public function update(Request $req, $id){
+
+        $validateData = $req->validate([
+            'title' => 'required|string|max:255',
+            'date' => 'required|date',
+            'description' => 'required'
+        ]);
+        
         $title = $req->title;
         $date = $req->date;
         $description = $req->description;
